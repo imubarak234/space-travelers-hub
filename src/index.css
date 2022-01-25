@@ -50,12 +50,11 @@ code {
   border-bottom: 2px solid black;
 }
 
-.footers {
-  height: 2vh;
-  width: auto;
-}
-
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .show > .nav-link {
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.navigate {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
