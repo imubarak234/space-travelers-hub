@@ -4,6 +4,14 @@ import './Mission.css';
 
 const MissionsGrid = (props) => {
   const { list } = props;
+  let count = 0;
+
+  const changes = (next) => {
+    let ans = '';
+    if ((next % 2) === 0) ans = 'row bg-light';
+    else ans = 'row';
+    return ans;
+  };
 
   return (
     <div className="container py-5">
@@ -21,13 +29,17 @@ const MissionsGrid = (props) => {
       </div>
 
       {
-        list.map((missions) => (
-          <MissionsItems
-            key={missions.mission_id}
-            name={missions.mission_name}
-            description={missions.description}
-          />
-        ))
+        list.map((missions) => {
+          count += 1;
+          return (
+            <MissionsItems
+              key={missions.mission_id}
+              name={missions.mission_name}
+              description={missions.description}
+              classes={changes(count)}
+            />
+          );
+        })
       }
     </div>
   );
