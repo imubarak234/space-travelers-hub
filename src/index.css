@@ -49,3 +49,13 @@ code {
 .topnav a:active {
   border-bottom: 2px solid black;
 }
+
+.footers {
+  height: 2vh;
+  width: auto;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+  border-bottom: 2px solid black;
+}
