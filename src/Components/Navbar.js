@@ -15,19 +15,20 @@ const Naver = () => (
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse justify-content-end">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink className="nav-link fw-normal pe-4" to="/">
+          <ul className="navbar-nav topnav">
+            <li className="nav-item pe-4">
+              <NavLink className="nav-link fw-normal" to="/">
                 Rockets
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link fw-normal pe-4 list-child" to="">
+            <li className="nav-item pe-4 ">
+              <NavLink className="nav-link fw-normal" to="">
                 Missions
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link fw-normal pe-4" to="">
+            <li className="list-child" />
+            <li className="nav-item pe-4">
+              <NavLink className="nav-link fw-normal" to="">
                 My Profile
               </NavLink>
             </li>
