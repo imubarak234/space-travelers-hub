@@ -2,17 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Naver from './Components/Navbar';
 import Footer from './Components/Footer';
+import store from './redux/configureStore';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Naver />
-      <Routes />
-      <Footer />
-    </Router>
-  </React.StrictMode>,
+  <Provider>
+    <React.StrictMode>
+      <Router>
+        <Naver />
+        <Routes />
+        <Footer />
+      </Router>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root'),
 );
 
