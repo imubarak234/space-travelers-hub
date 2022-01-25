@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
-import missionsReducer from './Missions/Missions';
+import thunk from 'redux-thunk';
+import missionsReducer, { sort, addMission } from './Missions/Missions';
 
 const reducer = combineReducers({
   missionsReducer,
@@ -8,7 +9,18 @@ const reducer = combineReducers({
 
 const store = createStore(
   reducer,
-  applyMiddleware(logger),
+  applyMiddleware(logger, thunk),
 );
+
+const refresh = async () => {
+  await fetch('https://api.spacexdata.com/v3/missions')
+    .then((response) => response.json())
+    .then((data) => {
+      const newData = sort(data);
+      newData.map((info) => store.dispatch(addMission(info)));
+    });
+};
+
+refresh();
 
 export default store;

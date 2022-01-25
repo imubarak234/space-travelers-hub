@@ -22,13 +22,13 @@ const Naver = () => (
               </NavLink>
             </li>
             <li className="nav-item pe-4 ">
-              <NavLink className="nav-link fw-normal" to="">
+              <NavLink className="nav-link fw-normal" to="/missions">
                 Missions
               </NavLink>
             </li>
             <li className="list-child" />
             <li className="nav-item pe-4">
-              <NavLink className="nav-link fw-normal" to="">
+              <NavLink className="nav-link fw-normal" to="/my-profile">
                 My Profile
               </NavLink>
             </li>
