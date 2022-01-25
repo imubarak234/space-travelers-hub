@@ -21,7 +21,7 @@ const MissionsItems = (props) => {
 MissionsItems.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  classes: PropTypes.func.isRequired,
+  classes: PropTypes.string.isRequired,
 };
 
 export default MissionsItems;

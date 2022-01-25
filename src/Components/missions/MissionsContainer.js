@@ -6,7 +6,7 @@ const MissionsContainer = () => {
   const states = useSelector((state) => state.missionsReducer, shallowEqual);
 
   return (
-    <div className="container-fluid h-auto pb-5">
+    <div className="container-fluid h-auto py-5">
       <MissionsGrid list={states} />
     </div>
   );

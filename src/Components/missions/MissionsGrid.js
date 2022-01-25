@@ -14,7 +14,7 @@ const MissionsGrid = (props) => {
   };
 
   return (
-    <div className="container py-5">
+    <div className="container py-3">
       <div className="row">
         <div className="col-2 bords">
           <p className="h3">Mission</p>
