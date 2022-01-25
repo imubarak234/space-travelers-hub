@@ -1,9 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { BrowserRouter as Router, Routes } from 'react-router-dom';
+import Naver from './Components/Navbar';
+import Footer from './Components/Footer';
 
 ReactDOM.render(
-  <React.StrictMode />,
+  <React.StrictMode>
+    <Router>
+      <Naver />
+      <Routes />
+      <Footer />
+    </Router>
+  </React.StrictMode>,
   document.getElementById('root'),
 );
 

@@ -16,6 +16,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body,
+html {
+  height: 100%;
+}
+
 code {
   font-family:
     source-code-pro,
@@ -24,4 +29,18 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#logos-img {
+  width: 3em;
+}
+
+.list-child {
+  border-right: 2px solid black;
 }
