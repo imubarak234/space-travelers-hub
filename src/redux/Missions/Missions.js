@@ -1,10 +1,15 @@
 const ADD_MISSION = 'space-travelers-hub/missions/ADD_MISSION';
-//  const REMOVE_MISSION = 'space-travelers-hub/missions/REMOVE_MISSION';
+const RESERVE_MISSION = 'space-travelers-hub/missions/RESERVE_MISSION';
 
 const initialState = [];
 
 export const addMission = (payload) => ({
   type: ADD_MISSION,
+  payload,
+});
+
+export const reserveMission = (payload) => ({
+  type: RESERVE_MISSION,
   payload,
 });
 
@@ -15,6 +20,7 @@ export const sort = (args) => {
       mission_id: args[x].mission_id,
       mission_name: args[x].mission_name,
       description: args[x].description,
+      reserved: false,
     };
     ans.push(newObj);
   }
@@ -32,6 +38,27 @@ const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_MISSION:
       return [...state, action.payload];
+    case RESERVE_MISSION:
+      return state.map((next) => {
+        if ((next.mission_id === action.payload)) {
+          if (next.reserved) {
+            return ({
+              mission_id: next.mission_id,
+              mission_name: next.mission_name,
+              description: next.description,
+              reserved: false,
+            });
+          }
+
+          return ({
+            mission_id: next.mission_id,
+            mission_name: next.mission_name,
+            description: next.description,
+            reserved: true,
+          });
+        }
+        return next;
+      });
     default:
       return state;
   }
