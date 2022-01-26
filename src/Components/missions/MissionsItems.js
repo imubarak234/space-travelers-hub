@@ -3,7 +3,7 @@ import './Mission.css';
 
 const MissionsItems = (props) => {
   const {
-    name, description, classes, ids, booking, infos, btnClass,
+    name, description, classes, ids, booking, infos, btnClass, membersInfo, membersClass,
   } = props;
 
   return (
@@ -15,7 +15,7 @@ const MissionsItems = (props) => {
         <p className="fw-normal">{description}</p>
       </div>
       <div className="col-2 bords d-flex flex-column justify-content-center">
-        <button type="button" className="btn btn-secondary">NOT A MEMBER</button>
+        <button type="button" className={membersClass}>{membersInfo}</button>
       </div>
       <div className="col-2 bords d-flex flex-column justify-content-center">
         <button type="button" className={btnClass} onClick={() => booking(ids)}>{infos}</button>
@@ -32,6 +32,8 @@ MissionsItems.propTypes = {
   ids: PropTypes.string.isRequired,
   infos: PropTypes.string.isRequired,
   btnClass: PropTypes.string.isRequired,
+  membersInfo: PropTypes.string.isRequired,
+  membersClass: PropTypes.string.isRequired,
 };
 
 export default MissionsItems;

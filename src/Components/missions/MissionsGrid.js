@@ -27,6 +27,20 @@ const MissionsGrid = (props) => {
     return ans;
   };
 
+  const memberButtonInfo = (args) => {
+    let ans = '';
+    if (args) ans = 'Active Member';
+    else ans = 'NOT A MEMBER';
+    return ans;
+  };
+
+  const memberButtonClass = (args) => {
+    let ans = '';
+    if (args) ans = 'btn btn-success';
+    else ans = 'btn btn-secondary';
+    return ans;
+  };
+
   return (
     <div className="px-3 py-3">
       <div className="row">
@@ -55,6 +69,8 @@ const MissionsGrid = (props) => {
               booking={booking}
               infos={buttonInfo(missions.reserved)}
               btnClass={buttonClass(missions.reserved)}
+              membersInfo={memberButtonInfo(missions.reserved)}
+              membersClass={memberButtonClass(missions.reserved)}
             />
           );
         })
