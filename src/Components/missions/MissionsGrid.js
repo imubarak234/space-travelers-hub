@@ -84,6 +84,7 @@ MissionsGrid.propTypes = {
       mission_id: PropTypes.string,
       mission_name: PropTypes.string,
       description: PropTypes.string,
+      reserved: PropTypes.bool,
     }),
   ).isRequired,
   booking: PropTypes.func.isRequired,
