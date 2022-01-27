@@ -8,6 +8,7 @@ import Footer from './Components/Footer';
 import store from './redux/configureStore';
 import MissionsContainer from './Components/missions/MissionsContainer';
 import ProfileContainer from './Components/profiles/ProfileContainer';
+import RocketContainer from './Components/rockets/RocketContainer';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Router>
         <Naver />
         <Routes>
+          <Route path="/" element={<RocketContainer />} />
           <Route path="/missions" element={<MissionsContainer />} />
           <Route path="/my-profile" element={<ProfileContainer />} />
         </Routes>
