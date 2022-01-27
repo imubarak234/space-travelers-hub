@@ -4,7 +4,7 @@ import MissionItem from './MissionItem';
 const MissionsList = (props) => {
   const { lists } = props;
   return (
-    <div>
+    <div className="w-50 me-3">
       <h3 className="h3">My Missions</h3>
       <ul className="list-group">
         {
