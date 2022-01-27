@@ -10,12 +10,10 @@ const reducer = combineReducers({
   missionsReducer,
   rocketReducer,
 });
-
 const store = createStore(
   reducer,
   applyMiddleware(logger, thunk),
 );
-
 const refresh = async () => {
   await fetch('https://api.spacexdata.com/v3/missions')
     .then((response) => response.json())
@@ -24,9 +22,7 @@ const refresh = async () => {
       newData.map((info) => store.dispatch(addMission(info)));
     });
 };
-
 refresh();
-
 const sorted = (args) => {
   const ans = [];
   for (let x = 0; x < args.length; x += 1) {
@@ -42,7 +38,6 @@ const sorted = (args) => {
   }
   return ans;
 };
-
 const refreshRocket = async () => {
   await fetch('https://api.spacexdata.com/v3/rockets')
     .then((response) => response.json())
@@ -51,7 +46,5 @@ const refreshRocket = async () => {
       newData.map((info) => store.dispatch(addRocket(info)));
     });
 };
-
 refreshRocket();
-
 export default store;

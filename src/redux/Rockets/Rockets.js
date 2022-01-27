@@ -1,18 +1,14 @@
 const ADD_ROCKET = 'space-travelers-hub/rockets/ADD_ROCKET';
 const RESERVE_ROCKET = 'space-travelers-hub/rockets/RESERVE_ROCKET';
-
 const initialState = [];
-
 export const addRocket = (payload) => ({
   type: ADD_ROCKET,
   payload,
 });
-
 export const reserveRocket = (payload) => ({
   type: RESERVE_ROCKET,
   payload,
 });
-
 const rocketReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ROCKET:
@@ -30,7 +26,6 @@ const rocketReducer = (state = initialState, action) => {
               reserved: false,
             });
           }
-
           return ({
             id: next.id,
             rocket_name: next.rocket_name,
@@ -46,5 +41,4 @@ const rocketReducer = (state = initialState, action) => {
       return state;
   }
 };
-
 export default rocketReducer;
