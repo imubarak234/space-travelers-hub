@@ -16,7 +16,7 @@ ReactDOM.render(
       <Router>
         <Naver />
         <Routes>
-          // <Route path="/" element={<RocketContainer />} />
+          {// <Route path="/" element={<RocketContainer />} />}
           <Route path="/missions" element={<MissionsContainer />} />
           <Route path="/my-profile" element={<ProfileContainer />} />
         </Routes>
