@@ -2,9 +2,8 @@ import PropTypes from 'prop-types';
 
 const RocketDisplay = (props) => {
   const {
-    names, desc, images, change, id, buttonClass, buttonInfo,
+    names, desc, images, change, id, buttonClass, buttonInfo, isReserved,
   } = props;
-
   return (
     <div className="card my-3 mx-3">
       <div className="row g-0">
@@ -14,7 +13,12 @@ const RocketDisplay = (props) => {
         <div className="col-md-9">
           <div className="card-body">
             <h3 className="card-title">{names}</h3>
-            <p className="card-text">{desc}</p>
+            <p className="card-text">
+              {
+              isReserved && <button type="button" className="btn btn-info btn-sm p-2">Reserved</button>
+            }
+              {desc}
+            </p>
             <button type="button" className={buttonClass} onClick={() => change(id)}>{buttonInfo}</button>
           </div>
         </div>
@@ -22,7 +26,6 @@ const RocketDisplay = (props) => {
     </div>
   );
 };
-
 RocketDisplay.propTypes = {
   names: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
@@ -31,6 +34,6 @@ RocketDisplay.propTypes = {
   id: PropTypes.number.isRequired,
   buttonClass: PropTypes.string.isRequired,
   buttonInfo: PropTypes.string.isRequired,
+  isReserved: PropTypes.bool.isRequired,
 };
-
 export default RocketDisplay;

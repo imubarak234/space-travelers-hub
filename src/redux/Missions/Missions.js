@@ -20,6 +20,7 @@ export const sort = (args) => {
       mission_id: args[x].mission_id,
       mission_name: args[x].mission_name,
       description: args[x].description,
+      wiki: args[x].wikipedia,
       reserved: false,
     };
     ans.push(newObj);
@@ -46,6 +47,7 @@ const missionsReducer = (state = initialState, action) => {
               mission_id: next.mission_id,
               mission_name: next.mission_name,
               description: next.description,
+              wiki: next.wiki,
               reserved: false,
             });
           }
@@ -54,6 +56,7 @@ const missionsReducer = (state = initialState, action) => {
             mission_id: next.mission_id,
             mission_name: next.mission_name,
             description: next.description,
+            wiki: next.wiki,
             reserved: true,
           });
         }
