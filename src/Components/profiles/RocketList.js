@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import RocketItems from './RocketItems';
 
 const RocketList = (props) => {
-  const { listsR, countR } = props;
+  const { listsR, countR, rocket } = props;
 
   return (
     <div className="w-50 ms-3">
@@ -12,7 +12,10 @@ const RocketList = (props) => {
           listsR.map((next) => (
             <RocketItems
               key={next.id}
+              ids={next.id}
               names={next.rocket_name}
+              rocket={rocket}
+              wiki={next.wiki}
             />
           ))
         }
@@ -36,6 +39,7 @@ RocketList.propTypes = {
     }),
   ).isRequired,
   countR: PropTypes.number.isRequired,
+  rocket: PropTypes.func.isRequired,
 };
 
 export default RocketList;
